@@ -10,8 +10,7 @@ public class PhoneNumber extends TestBase {
 
 
     @Test (description = "Login with valid phone and pw")
-    public void PhoneNumber() {
-
+    public void Login_With_Valid_Account() {
         page.home().openHomePage();
         page.home().openLoginPage();
         page.login().login(data.validPhone(),data.validPw());
