@@ -12,6 +12,12 @@ public class Page_Login extends BaseAction {
         super(driver);
     }
 
+    /**
+     * Login function
+     * @param usr username
+     * @param pw password
+     */
+
     public void login(String usr, String pw){
         System.out.println("-Login with ["+usr+"/"+pw+"]");
         waitFor(Login.txtPhoneNumber,5);
