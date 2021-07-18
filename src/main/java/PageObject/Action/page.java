@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class page {
-    private static final ThreadLocal<page> instance = new ThreadLocal<>();
+    private static page instance ;
     private final WebDriver driver;
     private Page_Home homePage;
     private Page_Login loginPage;
@@ -17,35 +17,30 @@ public class page {
     public static void init() {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "//chromedriver.exe");
         WebDriver _driver = new ChromeDriver();
-        instance.set(new page(_driver));
+        instance=new page(_driver);
     }
 
     public static void end(){
-        instance().driver.close();
+        instance.driver.close();
     }
 
-    private static page instance() {
-        return instance.get();
-    }
-
-
-
+ 
     public static Page_Login login() {
 
-        if (instance().loginPage == null) {
-            instance().loginPage = new Page_Login(instance().driver);
+        if (instance.loginPage == null) {
+            instance.loginPage = new Page_Login(instance.driver);
         }
 
-        return instance().loginPage;
+        return instance.loginPage;
     }
 
 
     public static Page_Home home() {
 
-        if (instance().homePage == null) {
-            instance().homePage = new Page_Home(instance().driver);
+        if (instance.homePage == null) {
+            instance.homePage = new Page_Home(instance.driver);
         }
-        return instance().homePage;
+        return instance.homePage;
     }
 
 
