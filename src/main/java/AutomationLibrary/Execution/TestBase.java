@@ -1,10 +1,10 @@
 package AutomationLibrary.Execution;
 
 
+import AutomationLibrary.BaseAction.TestInfo;
 import PageObject.Action.page;
 import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 
@@ -29,6 +29,8 @@ public class TestBase {
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod(Method method, ITestContext context) {
         System.out.println("TEST CASE : "+ method.getAnnotation(Test.class).description());
+        TestInfo annotation = method.getAnnotation(TestInfo.class);
+        annotation.testID();
     }
 
 
@@ -37,6 +39,8 @@ public class TestBase {
 
         page.end();
     }
+
+
 
 
 
