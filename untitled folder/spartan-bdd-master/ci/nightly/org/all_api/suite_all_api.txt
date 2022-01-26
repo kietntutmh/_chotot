@@ -1,0 +1,6 @@
+#DOMAIN___SERVICE___POD_NAME___CUCUMBER_TAGS___NEW_COLUMN
+# API
+org___scooby___scooby___@SCOOBY
+org___sendy-api___sendy-api___@SENDY-API
+org___iris___iris___@IRIS-FAS
+

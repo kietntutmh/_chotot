@@ -1,0 +1,26 @@
+language: java
+jdk: openjdk8
+
+import:
+  - carousell/wsm:shared/runner.yml@main
+
+services:
+  - docker
+
+before_install:
+  - source <( curl -sL https://lib.cmco.io/ci/runner.sh )
+  - runner_init
+
+jobs:
+  include:
+    - stage: Dockerize
+      name: "Build & push docker image"
+      if: tag IS blank AND type = push AND branch = main
+      script:
+        - export DOCKER_IMAGE="asia.gcr.io/mco-sa-all-devops-2021-05-17/ctf-qe-auto-api:latest"
+        - export COMMAND_DOCKERIZE="docker build -f docker_files/Dockerfile_API --no-cache -t $DOCKER_IMAGE ."
+        - runner_dockerize
+        - export DOCKER_IMAGE="asia.gcr.io/mco-sa-all-devops-2021-05-17/ctf-qe-auto-ui:latest"
+        - export COMMAND_DOCKERIZE="docker build -f docker_files/Dockerfile_UI --no-cache -t $DOCKER_IMAGE ."
+        - runner_dockerize
+

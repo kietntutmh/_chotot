@@ -1,0 +1,16 @@
+FROM maven:3.6.1-jdk-8-alpine
+#docker.chotot.org/spartan-bdd:gsheet_status
+
+WORKDIR /usr/share/qa
+
+# Install dependencies
+COPY . .
+RUN mvn clean install
+
+# K8S_TIMEOUT=300
+# K8S_TIMEDELAY=10
+# K8S_TIME_FIRST_DELAY=180
+# K8S_PREFIX_STATUS=uac
+# SHEET_NAME_FIXED=BRAINSTEM_BDD
+
+ENTRYPOINT mvn clean test -Dk8sTimeOut=$K8S_TIMEOUT -Dk8sTimeDelay=$K8S_TIMEDELAY -Dk8sPrefixStatus=$K8S_PREFIX_STATUS -Dk8sTimeFirstDelay=$K8S_TIME_FIRST_DELAY -DsheetNameFixed=$SHEET_NAME_FIXED -Dcucumber.filter.tags="@GOOGLESHEET_GETSTATUS"

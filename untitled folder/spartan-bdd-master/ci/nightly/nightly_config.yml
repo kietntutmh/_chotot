@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stg-ci-nightly-DOMAIN_VALUE-SERVICE_VALUE-POD_NAME_VALUE
+spec:
+  containers:
+    - env:
+        - name: CUCUMBER_TAGS
+          value: "CUCUMBER_TAGS_VALUE"
+        - name: INSERT_NEW_STATUS_COLUMN
+          value: "INSERT_NEW_STATUS_COLUMN_VALUE"
+        - name: DOMAIN
+          value: DOMAIN_VALUE
+        - name: TEST_RUN_TYPE
+          value: "Nightly"
+      image: "docker.chotot.DOMAIN_VALUE/spartan-bdd:1.1"
+      name: stg-ci-nightly-DOMAIN_VALUE-SERVICE_VALUE-POD_NAME_VALUE
+      imagePullPolicy: Always
+      resources:
+        requests:
+          memory: 512Mi
+          cpu: 400m
+        limits:
+          memory: 2048Mi
+          cpu: 1000m
+  restartPolicy: Never
+  tolerations:
+    - key: "qa"
+      value: "true"
+      effect: "NoSchedule"

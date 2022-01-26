@@ -1,0 +1,8 @@
+#DOMAIN___SERVICE___POD_NAME___CUCUMBER_TAGS
+org___new-user-ads-api___user-ads-listing-fee1___@LISTING_FEE_1___true
+org___new-user-ads-api___user-ads-listing-fee2___@LISTING_FEE_2
+org___new-user-ads-api___user-ads-listing-fee3___@LISTING_FEE_3
+org___new-user-ads-api___user-ads-listing-fee4___@LISTING_FEE_4
+org___new-user-ads-api___user-ads-listing-fee5___@LISTING_FEE_5
+org___new-user-ads-api___user-ads-listing-fee6___@LISTING_FEE_6
+org___new-user-ads-api___user-ads-listing-fee7___@LISTING_FEE_7

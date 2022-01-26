@@ -1,0 +1,2 @@
+#TYPE___DOMAIN___SERVICE___POD_NAME___CUCUMBER_TAGS___FIRST_POD___SHEET_NAME
+api___org___chat-api___1___@CHAT-API and @V0.1___true___CHAT_API_BDD

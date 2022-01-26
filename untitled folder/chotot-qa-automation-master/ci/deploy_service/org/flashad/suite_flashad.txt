@@ -1,0 +1,92 @@
+#DOMAIN___SERVICE___POD_NAME___CUCUMBER_TAGS___IS_FIRST_POD
+# VEH Private
+org___flashad___veh1___@INSERTAD_VEH_UI and @CI1___true
+org___flashad___veh2___@INSERTAD_VEH_UI and @CI2
+org___flashad___veh3___@INSERTAD_VEH_UI and @CI3
+org___flashad___veh4___@INSERTAD_VEH_UI and @CI4
+org___flashad___veh5___@INSERTAD_VEH_UI and @CI5
+org___flashad___veh6___@INSERTAD_VEH_UI and @CI6
+org___flashad___veh7___@INSERTAD_VEH_UI and @CI7
+# VEH Shop1
+org___flashad___veh8___@INSERTAD_VEH_UI and @CI8
+org___flashad___veh9___@INSERTAD_VEH_UI and @CI9
+org___flashad___veh10___@INSERTAD_VEH_UI and @CI10
+org___flashad___veh11___@INSERTAD_VEH_UI and @CI11
+# ELT Private
+org___flashad___elt1___@INSERTAD_ELT_UI and @CI1
+org___flashad___elt2___@INSERTAD_ELT_UI and @CI2
+org___flashad___elt3___@INSERTAD_ELT_UI and @CI3
+org___flashad___elt4___@INSERTAD_ELT_UI and @CI4
+org___flashad___elt5___@INSERTAD_ELT_UI and @CI5
+org___flashad___elt6___@INSERTAD_ELT_UI and @CI6
+org___flashad___elt7___@INSERTAD_ELT_UI and @CI7
+org___flashad___elt8___@INSERTAD_ELT_UI and @CI8
+org___flashad___elt9___@INSERTAD_ELT_UI and @CI9
+# VEH Shop2
+org___flashad___veh12___@INSERTAD_VEH_UI and @CI12
+org___flashad___veh13___@INSERTAD_VEH_UI and @CI13
+org___flashad___veh14___@INSERTAD_VEH_UI and @CI14
+# ELT Shop1
+org___flashad___elt10___@INSERTAD_ELT_UI and @CI10
+org___flashad___elt11___@INSERTAD_ELT_UI and @CI11
+org___flashad___elt12___@INSERTAD_ELT_UI and @CI12
+org___flashad___elt13___@INSERTAD_ELT_UI and @CI13
+org___flashad___elt14___@INSERTAD_ELT_UI and @CI14
+# PTY Private
+org___flashad___pty1___@INSERTAD_PTY_UI and @CI1
+org___flashad___pty2___@INSERTAD_PTY_UI and @CI2
+org___flashad___pty3___@INSERTAD_PTY_UI and @CI3
+org___flashad___pty4___@INSERTAD_PTY_UI and @CI4
+org___flashad___pty5___@INSERTAD_PTY_UI and @CI5
+# PTY Shop
+org___flashad___pty6___@INSERTAD_PTY_UI and @CI6
+org___flashad___pty7___@INSERTAD_PTY_UI and @CI7
+org___flashad___pty8___@INSERTAD_PTY_UI and @CI8
+org___flashad___pty9___@INSERTAD_PTY_UI and @CI9
+org___flashad___pty10___@INSERTAD_PTY_UI and @CI10
+# ELT Shop2
+org___flashad___elt15___@INSERTAD_ELT_UI and @CI15
+org___flashad___elt16___@INSERTAD_ELT_UI and @CI16
+org___flashad___elt17___@INSERTAD_ELT_UI and @CI17
+org___flashad___elt18___@INSERTAD_ELT_UI and @CI18
+# C2C
+org___flashad___fashion1___@INSERTAD_FASHION_UI and @CI1
+org___flashad___fashion2___@INSERTAD_FASHION_UI and @CI2
+org___flashad___fashion3___@INSERTAD_FASHION_UI and @CI3
+org___flashad___fashion4___@INSERTAD_FASHION_UI and @CI4
+org___flashad___fashion5___@INSERTAD_FASHION_UI and @CI5
+org___flashad___fashion6___@INSERTAD_FASHION_UI and @CI6
+org___flashad___entertainment1___@INSERTAD_ENTERTAINMENT_UI and @CI1
+org___flashad___entertainment2___@INSERTAD_ENTERTAINMENT_UI and @CI2
+org___flashad___entertainment3___@INSERTAD_ENTERTAINMENT_UI and @CI3
+org___flashad___entertainment4___@INSERTAD_ENTERTAINMENT_UI and @CI4
+org___flashad___entertainment5___@INSERTAD_ENTERTAINMENT_UI and @CI5
+org___flashad___entertainment6___@INSERTAD_ENTERTAINMENT_UI and @CI6
+org___flashad___household1___@INSERTAD_HOUSEHOLD_UI and @CI1
+org___flashad___household2___@INSERTAD_HOUSEHOLD_UI and @CI2
+org___flashad___household3___@INSERTAD_HOUSEHOLD_UI and @CI3
+org___flashad___household4___@INSERTAD_HOUSEHOLD_UI and @CI4
+org___flashad___household5___@INSERTAD_HOUSEHOLD_UI and @CI5
+org___flashad___household6___@INSERTAD_HOUSEHOLD_UI and @CI6
+org___flashad___household7___@INSERTAD_HOUSEHOLD_UI and @CI7
+org___flashad___household8___@INSERTAD_HOUSEHOLD_UI and @CI8
+org___flashad___household9___@INSERTAD_HOUSEHOLD_UI and @CI9
+org___flashad___household10___@INSERTAD_HOUSEHOLD_UI and @CI10
+org___flashad___electric1___@INSERTAD_ELECTRIC-APPLIANCES_UI and @CI1
+org___flashad___electric2___@INSERTAD_ELECTRIC-APPLIANCES_UI and @CI2
+org___flashad___electric3___@INSERTAD_ELECTRIC-APPLIANCES_UI and @CI3
+org___flashad___industrial1___@INSERTAD_INDUSTRIAL_UI and @CI1 and not @SMOKE
+org___flashad___industrial2___@INSERTAD_INDUSTRIAL_UI and @CI2 and not @SMOKE
+org___flashad___industrial3___@INSERTAD_INDUSTRIAL_UI and @CI3 and not @SMOKE
+org___flashad___mom___@INSERTAD_MOM-AND-BABY_UI and not @SMOKE
+org___flashad___job1___@INSERTAD_JOBS_UI and @CI1 and not @SMOKE
+org___flashad___job2___@INSERTAD_JOBS_UI and @CI2 and not @SMOKE
+org___flashad___service1___@INSERTAD_SERVICE_UI and @CI1 and not @SMOKE
+org___flashad___service2___@INSERTAD_SERVICE_UI and @CI2 and not @SMOKE
+org___flashad___others___@INSERTAD_OTHERS_UI and not @SMOKE
+org___flashad___pet1___@INSERTAD_PET_UI and @CI1
+org___flashad___pet2___@INSERTAD_PET_UI and @CI2
+org___flashad___pet3___@INSERTAD_PET_UI and @CI3
+org___flashad___pet4___@INSERTAD_PET_UI and @CI4
+org___flashad___pet5___@INSERTAD_PET_UI and @CI5
+org___flashad___pet6___@INSERTAD_PET_UI and @CI6

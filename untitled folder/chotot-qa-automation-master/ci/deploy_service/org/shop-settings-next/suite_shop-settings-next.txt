@@ -1,0 +1,2 @@
+#DOMAIN___SERVICE___POD_NAME___CUCUMBER_TAGS___NEW_COL___SheetName
+org___shop-settings-next___shop-settings-next___@C2CSHOPS_API___true

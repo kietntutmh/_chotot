@@ -1,0 +1,37 @@
+stages:
+  - setup
+  - scan
+
+variables:
+  HOST_LOCAL: "docker.chotot.org"
+  HOST_CLOUD: "asia.gcr.io"
+  CLOUD_PROJECT: "cicd-222403"
+  IMAGE_NAME: $CI_PROJECT_NAME
+  TAG: "1.1"
+
+setup:
+  stage: setup
+  script:
+    - docker build -f docker_files/Dockerfile_API --no-cache -t $HOST_LOCAL/$IMAGE_NAME:$TAG -t $HOST_CLOUD/$CLOUD_PROJECT/$IMAGE_NAME:$TAG .
+    - docker build -f docker_files/Dockerfile_UI --no-cache -t $HOST_LOCAL/$IMAGE_NAME-ui:$TAG -t $HOST_CLOUD/$CLOUD_PROJECT/$IMAGE_NAME-ui:$TAG .
+    - docker push $HOST_LOCAL/$IMAGE_NAME:$TAG
+    # For testing cloud services
+    - echo $GCR_KEY | docker login  -u _json_key  --password-stdin  https://$HOST_CLOUD
+    - docker push $HOST_CLOUD/$CLOUD_PROJECT/$IMAGE_NAME:$TAG
+
+  only:
+    - develop
+
+scan:
+  stage: scan
+  script:
+    - source ~/.config/sonar
+    - mvn verify sonar:sonar
+      -Dsonar.projectKey=$CI_PROJECT_NAME
+      -Dsonar.host.url=$SONAR_URL
+      -Dsonar.login=$SONAR_LOGIN
+      -Dsonar.sources=./src/main
+  only:
+    - develop
+  tags:
+    - auto_test

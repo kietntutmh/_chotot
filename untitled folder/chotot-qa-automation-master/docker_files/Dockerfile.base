@@ -1,0 +1,27 @@
+FROM maven:3.6.1-jdk-8-slim
+#docker.chotot.org/spartan-bdd:base1.0
+
+# Set timezone
+ENV TZ=Asia/Ho_Chi_Minh
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Add a user for running applications
+RUN useradd apps
+RUN mkdir -p /home/apps && chown apps:apps /home/apps
+
+# Install needed dependencies
+RUN apt-get update \
+    && apt-get install -y x11vnc \
+    && apt-get install -y xvfb \
+    && apt-get install -y fluxbox \
+    && apt-get install -y wget \
+    && apt-get install -y wmctrl \
+    && apt-get install -y gnupg
+
+# Install google chrome
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+	&& echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
+	&& apt-get update -qqy \
+	&& apt-get -qqy install google-chrome-stable \
+    && rm /etc/apt/sources.list.d/google-chrome.list \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*

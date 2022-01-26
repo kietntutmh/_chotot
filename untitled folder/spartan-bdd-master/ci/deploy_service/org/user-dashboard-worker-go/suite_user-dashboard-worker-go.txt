@@ -1,0 +1,5 @@
+#DOMAIN___SERVICE___POD_NAME___CUCUMBER_TAGS
+org___user-dashboard-worker-go___udwg1___@USER-DASHBOARD-WORKER-GO1 and @CI___true
+org___user-dashboard-worker-go___udwg2___@USER-DASHBOARD-WORKER-GO2 and @CI
+org___user-dashboard-worker-go___udwg3___@USER-DASHBOARD-WORKER-GO3 and @CI
+org___user-dashboard-worker-go___listing-fee1___@LISTING_FEE___true

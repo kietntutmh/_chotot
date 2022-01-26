@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ChoTot" />
+        <module name="_chotot" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ChoTot" options="-bootclasspath &quot;$PROJECT_DIR$/../../../../../Program Files/Java/jdk1.8.0_251/jre/lib/rt.jar;$PROJECT_DIR$/../../../../../Program Files/Java/jdk1.8.0_251/jre/lib/jce.jar;$PROJECT_DIR$/../../../../../Program Files/Java/jdk1.8.0_251/jre/../lib/tools.jar&quot;" />
+      <module name="_chotot" options="-bootclasspath /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/jre/../lib/tools.jar" />
     </option>
   </component>
 </project>

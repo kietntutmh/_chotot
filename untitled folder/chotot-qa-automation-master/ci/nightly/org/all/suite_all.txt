@@ -1,0 +1,7 @@
+#DOMAIN___SERVICE___POD_NAME___CUCUMBER_TAGS___NEW_COLUMN___CHECK_POS
+#org___flashad___pty___@INSERTAD_PTY_UI and not @SMOKE___true___false
+#org___flashad___elt___@INSERTAD_ELT_UI and not @SMOKE___false___false
+#org___flashad___veh___@INSERTAD_VEH_UI and not @SMOKE___false___false
+#org___flashad___pet___(@INSERTAD_PET_UI or @INSERTAD_FASHION_UI or @INSERTAD_ENTERTAINMENT_UI) and not @SMOKE___false___false
+#org___flashad___electric___(@INSERTAD_ELECTRIC-APPLIANCES_UI or @INSERTAD_HOUSEHOLD_UI or @INSERTAD_INDUSTRIAL_UI) and not @SMOKE___false___false
+#org___flashad___mom-others-jobs-service___(@INSERTAD_SERVICE_UI or @INSERTAD_JOBS_UI or @INSERTAD_OTHERS_UI or @INSERTAD_MOM-AND-BABY_UI) and not @SMOKE___false___false

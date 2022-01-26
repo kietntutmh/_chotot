@@ -1,0 +1,20 @@
+FROM docker.chotot.org/spartan-bdd:base1.1
+
+WORKDIR /usr/share/qa
+
+# Install dependencies
+COPY . .
+RUN mvn clean install
+
+# CUCUMBER_TAGS="@INSERTAD_FASHION_API"
+# DOMAIN=org
+# INSERT_NEW_STATUS_COLUMN=false
+# TEST_RUN_TYPE=Nightly
+# RUN_ON_K8S=false
+# K8S_PREFIX_STATUS=brainstem
+# IS_FIRST_POD=false
+# EXPECTED_USER_PHONE=phone
+# SHEET_NAME_FIXED
+# ENTRYPOINT mvn clean test -DheadlessMode=true -DupdateStatus=true -DinsertNewStatusColumn=$INSERT_NEW_STATUS_COLUMN -Ddomain=$DOMAIN -DtestRunType=$TEST_RUN_TYPE -DrunOnK8S=$RUN_ON_K8S -Dk8sPrefixStatus=$K8S_PREFIX_STATUS -DcreateNewUser=$CREATE_NEW_USER -Dcucumber.filter.tags="$CUCUMBER_TAGS" -DisFirstPod=$IS_FIRST_POD -DsheetNameFixed=$SHEET_NAME_FIXED -DexpectedUserPhone=$EXPECTED_USER_PHONE
+
+ENTRYPOINT ["/bin/bash", "-c", ". /etc/secrets/.env && mvn clean test -DheadlessMode=true -DupdateStatus=true -DinsertNewStatusColumn=$INSERT_NEW_STATUS_COLUMN -Ddomain=$DOMAIN -DtestRunType=$TEST_RUN_TYPE -DrunOnK8S=$RUN_ON_K8S -Dk8sPrefixStatus=$K8S_PREFIX_STATUS -DcreateNewUser=$CREATE_NEW_USER -DisFirstPod=$IS_FIRST_POD -DsheetNameFixed=$SHEET_NAME_FIXED -DexpectedUserPhone=$EXPECTED_USER_PHONE -Dcucumber.filter.tags=\"$CUCUMBER_TAGS\""]

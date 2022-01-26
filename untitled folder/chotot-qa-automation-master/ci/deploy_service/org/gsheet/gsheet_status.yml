@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stg-ci-deploy-org-gsheet-status-SERVICE_VALUE
+spec:
+  serviceAccountName: vault-sa-stg-ci-deploy
+  initContainers:
+    - name: vault-agent-auth
+      image: vault:latest
+      args:
+      - agent
+      - -config=/etc/vault/vault-agent-config-stg-ci-deploy.hcl
+      env:
+      - name: VAULT_ADDR
+        value: http://vault-stag.chotot.local:8200
+      volumeMounts:
+      - name: vault-agent-config
+        mountPath: /etc/vault
+      - name: vault-token
+        mountPath: /home/vault
+    - name: consul-template
+      image: hashicorp/consul-template:alpine
+      args:
+      - -once
+      - -config=/etc/consul-template/consul-template-stg-ci-deploy.hcl
+      env:
+      - name: HOME
+        value: /home/vault
+      - name: VAULT_ADDR
+        value: http://vault-stag.chotot.local:8200
+      volumeMounts:
+      - name: vault-token
+        mountPath: /home/vault
+      - name: consul-template-config
+        mountPath: /etc/consul-template
+      - name: secret-mounting
+        mountPath: /etc/secrets
+  volumes:
+    - name: dshm
+      emptyDir:
+        medium: Memory
+    - name: secret-mounting
+      emptyDir: {}
+    - name: vault-token
+      emptyDir: {}
+    - name: vault-agent-config
+      configMap:
+        name: vault-configmap-stg-ci-deploy
+        items:
+        - key: vault-agent-config-stg-ci-deploy.hcl
+          path: vault-agent-config-stg-ci-deploy.hcl
+    - name: consul-template-config
+      configMap:
+        name: vault-configmap-stg-ci-deploy
+        items:
+        - key: consul-template-stg-ci-deploy.hcl
+          path: consul-template-stg-ci-deploy.hcl
+  containers:
+    - env:
+        - name: CUCUMBER_TAGS
+          value: "@GOOGLESHEET_GETSTATUS"
+        - name: SHEET_NAME_FIXED
+          value: "SHEET_NAME_FIXED_VALUE"
+        - name: K8S_PREFIX_STATUS
+          value: gsheet_status
+        - name: K8S_TIMEOUT
+          value: "300"
+        - name: K8S_TIME_DELAY
+          value: "10"
+        - name: K8S_TIME_FIRST_DELAY
+          value: "60"
+      image: "docker.chotot.org/spartan-bdd:gsheet_status"
+      imagePullPolicy: Always
+      name: stg-ci-deploy-org-gsheet-status
+      volumeMounts:
+        - mountPath: /dev/shm
+          name: dshm
+        - mountPath: /etc/secrets
+          name: secret-mounting
+          readOnly: true
+        - mountPath: /home/vault
+          name: vault-token
+          readOnly: true
+      resources:
+        requests:
+          memory: 512Mi
+          cpu: 400m
+        limits:
+          memory: 1028Mi
+          cpu: 800m
+  restartPolicy: Never
+  tolerations:
+    - key: "qa"
+      value: "true"
+      effect: "NoSchedule"
